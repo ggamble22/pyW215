@@ -42,8 +42,9 @@ class SmartPlug(object):
         self.url = "http://{}/HNAP1/".format(ip)
         self.user = user
         self.password = password
-        self.use_legacy_protocol = use_legacy_protocol
-        if self.use_legacy_protocol:
+        self.legacy_support = use_legacy_protocol
+        
+        if self.legacy_support:
             _LOGGER.error("Enabled support for legacy firmware.")
         self._error_report = False
 
